@@ -1,0 +1,300 @@
+/* ============================================
+   HEADER - Modern Floating Glassmorphism Navbar
+   ============================================ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 12px 24px 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-inner {
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 64px;
+  padding: 0 28px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scrolled State */
+.header--scrolled {
+  padding-top: 8px;
+}
+
+.header--scrolled .header-inner {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-color: rgba(3, 45, 97, 0.08);
+  box-shadow:
+    0 4px 30px rgba(3, 45, 97, 0.1),
+    0 1px 3px rgba(3, 45, 97, 0.04);
+}
+
+/* Logo */
+.header-logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  /* Add white drop shadow so blue logo pops on blue bg */
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+.header--scrolled .header-logo img {
+  filter: none;
+}
+
+.header-logo:hover img {
+  transform: scale(1.04);
+}
+
+/* Navigation */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.header-link {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 7px 14px;
+  border-radius: 50px;
+  transition: all 0.25s ease;
+  position: relative;
+  letter-spacing: 0.01em;
+}
+
+.header--scrolled .header-link {
+  color: var(--text-body);
+}
+
+.header-link:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.header--scrolled .header-link:hover {
+  color: var(--tech-blue);
+  background: rgba(18, 152, 213, 0.06);
+}
+
+/* Active link */
+.header-link--active {
+  color: var(--white) !important;
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+.header--scrolled .header-link--active {
+  color: var(--tech-blue) !important;
+  background: rgba(18, 152, 213, 0.08);
+}
+
+.header-link--mobile-only {
+  display: none;
+}
+
+/* Actions container */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* CTA Button */
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 9px 22px;
+  border-radius: 50px;
+  background: var(--white);
+  color: var(--deep-blue);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: none;
+  letter-spacing: 0.01em;
+}
+
+.header-cta:hover {
+  background: var(--teal);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+}
+
+.header--scrolled .header-cta {
+  background: linear-gradient(135deg, var(--tech-blue), #0891b2);
+  color: var(--white);
+}
+
+.header--scrolled .header-cta:hover {
+  background: linear-gradient(135deg, #0f82b8, #0e7490);
+  box-shadow: 0 6px 20px rgba(18, 152, 213, 0.35);
+  color: var(--white);
+}
+
+/* Toggle Button */
+.header-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--white);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.header--scrolled .header-toggle {
+  color: var(--text-dark);
+}
+
+.header-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.header--scrolled .header-toggle:hover {
+  background: rgba(18, 152, 213, 0.06);
+}
+
+/* Mobile Overlay */
+.header-overlay {
+  display: none;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+@media (max-width: 960px) {
+  .header {
+    padding: 8px 16px 0;
+  }
+
+  .header-inner {
+    padding: 0 18px;
+    height: 58px;
+    border-radius: 50px;
+  }
+
+  .header-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    height: 100dvh;
+    background: rgba(3, 45, 97, 0.95); /* deep-blue */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 100px 24px 40px;
+    gap: 8px;
+    box-shadow: -12px 0 40px rgba(0, 0, 0, 0.25);
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    overflow-y: auto;
+    border-radius: 0;
+  }
+
+  .header-nav--open {
+    right: 0;
+  }
+
+  .header-link {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    padding: 14px 20px;
+    border-radius: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .header-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+  }
+
+  .header-link--active {
+    color: var(--white) !important;
+    background: var(--tech-blue);
+    font-weight: 600;
+    border-bottom-color: transparent;
+  }
+
+  .header-link--mobile-only {
+    display: block;
+    margin-top: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    border-bottom: none;
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .header-link--mobile-only:hover {
+    background: var(--teal);
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .header-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+  }
+
+  .header-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 998;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 6px 10px 0;
+  }
+
+  .header-inner {
+    padding: 0 16px;
+    height: 60px;
+  }
+
+  .header-logo img {
+    height: 40px;
+  }
+}

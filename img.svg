@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="globeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B5CAD"/>
+      <stop offset="50%" stop-color="#1298D5"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#022F66"/>
+      <stop offset="100%" stop-color="#1298D5"/>
+    </linearGradient>
+    <style>
+      .title { font-family: Arial, Helvetica, sans-serif; font-weight: 700; letter-spacing: 4px; fill: #032D61; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-weight: 500; letter-spacing: 14px; fill: #1298B4; }
+      .thin { stroke: #1298D5; stroke-width: 3; fill: none; stroke-linecap: round; }
+      .thick { stroke: url(#globeGrad); stroke-width: 16; fill: none; stroke-linecap: round; }
+      .ring { stroke: url(#ringGrad); stroke-width: 16; fill: none; stroke-linecap: round; }
+      .node { fill: url(#globeGrad); }
+    </style>
+  </defs>
+
+  <g transform="translate(0,20)">
+    <ellipse cx="800" cy="430" rx="210" ry="190" class="thin"/>
+    <path d="M620 360 C720 300, 880 300, 980 360" class="thin"/>
+    <path d="M605 430 C720 385, 880 385, 995 430" class="thin"/>
+    <path d="M620 505 C725 555, 875 555, 980 505" class="thin"/>
+    <path d="M705 265 C675 360, 675 505, 705 595" class="thin"/>
+    <path d="M800 245 C780 340, 780 520, 800 615" class="thin"/>
+    <path d="M895 265 C925 360, 925 505, 895 595" class="thin"/>
+    <path d="M635 330 C700 280, 820 250, 930 255" class="thick"/>
+    <path d="M615 400 C700 350, 835 300, 960 300" class="thick"/>
+    <path d="M640 545 C730 590, 835 595, 925 565" class="thick"/>
+    <path d="M560 465 C650 520, 925 525, 1045 450" class="ring"/>
+    <circle cx="840" cy="385" r="18" class="node"/>
+  </g>
+
+  <text x="800" y="790" text-anchor="middle" class="title" font-size="84">CRISPIN ALESSI</text>
+  <text x="800" y="885" text-anchor="middle" class="subtitle" font-size="56">LIMITED</text>
+</svg>
