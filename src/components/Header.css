@@ -35,7 +35,7 @@
   padding-top: 8px;
 }
 
-.header--scrolled .header-inner {
+/* .header--scrolled .header-inner {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -43,7 +43,7 @@
   box-shadow:
     0 4px 30px rgba(3, 45, 97, 0.1),
     0 1px 3px rgba(3, 45, 97, 0.04);
-}
+} */
 
 /* Logo */
 .header-logo img {
